@@ -1,0 +1,143 @@
+@import 'reset.scss';
+@import 'fonts.scss';
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+}
+
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgb(0, 0, 0), rgb(65, 74, 75));
+    padding: 30px 10px;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.head {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 30px;
+
+    h1 {
+        font-size: 30px;
+        font-weight: 800;
+    }
+}
+
+.imgbox {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-right: 30px;
+
+    img {
+        width: 100%;
+    }
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.slider {
+    position: relative;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.slider__line {
+    display: flex;
+    align-items: center;
+    transition: all .3s ease-in-out;
+
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.slider__btn {
+    background-color: #fff;
+    border-radius: 2px;
+    position: absolute;
+    border: none;
+    top: 50%;
+    transition: all .3s ease-in-out;
+    padding: 5px;
+
+    svg {
+        margin-bottom: -3.64px;
+    }
+
+    &:hover {
+        background-color: #757C7C;
+    }
+}
+
+.btn-prev {
+    left: 1%;
+    transform: translateY(50%) rotate(90deg);
+}
+
+.btn-next {
+    right: 1%;
+    transform: translateY(50%) rotate(90deg);
+}
+
+.slider__nav {
+    display: flex;
+    column-gap: 10px;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slider__dot {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: #757C7C;
+    }
+}
+
+.active-dot {
+    background-color: #757C7C;
+}
+
+@media (max-width: 1500px) {
+    .slider__btn {
+        svg {
+            width: calc(15px + (30 - 15) * ((100vw - 350px) / (1500 - 350)));
+            height: calc(15px + (30 - 15) * ((100vw - 350px) / (1500 - 350)));
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .slider__dot {
+        width: 15px;
+        height: 15px;
+    }
+}
+
+@media (max-width: 350px) {
+    .slider__btn {
+        display: none;
+    }
+
+}
